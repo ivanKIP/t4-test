@@ -13,4 +13,9 @@ class Index
 
     }
 
+    public function actionAbout()
+    {
+
+    }
+
 }
