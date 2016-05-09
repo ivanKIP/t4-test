@@ -1,5 +1,3 @@
-# Minimal web-application based on T4 framework
-
-Use 
-<code>composer create-project pr-of-it/t4-app-mini --stability="dev"</code>
-to install this application
+Насколько я понял, в Layouts\Index.html содержатся макеты страниц, а содержимое наполняется в шаблонах Templates\Index\Default.html и т.п.
+После добавления в конфиг 'extensions' => ['bootstrap' => ['theme' => 'cosmo'] ] автоматически подключилась к проекту тема 'cosmo' из bootstrap, при этом все подключилось через cdn.
+Интересненько)
