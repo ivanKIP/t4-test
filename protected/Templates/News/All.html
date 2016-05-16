@@ -1,0 +1,12 @@
+{% extends 'Index.html' %}
+
+{% block content %}
+    <H3>Все новости:</H3>
+    {% for item in news %}
+        <article>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
+            <img src="{{ item.image }}" width="100px;" alt="">
+        </article>
+    {% endfor %}
+{% endblock %}

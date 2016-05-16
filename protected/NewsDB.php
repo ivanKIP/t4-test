@@ -3,7 +3,7 @@
 return [
 
     '1' => [
-        'title' => 'Первая новоесть',
+        'title' => 'Первая новость',
         'text'  => 'Текст первой новости' ,
         'image' => 'http://www.wpclipart.com/education/gold_stars/more_stars/star_number_1_T.png'
     ],
