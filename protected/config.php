@@ -7,4 +7,13 @@ return [
             'theme' => 'cosmo'
         ],
     ],
+    'db' => [
+        'default' => [
+            'driver'    => 'mysql',
+            'host'      => 'localhost',
+            'dbname'    => 'news',
+            'user'      => 'root',
+            'password'  => ''
+        ]
+    ]
 ];
