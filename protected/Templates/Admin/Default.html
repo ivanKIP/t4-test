@@ -6,7 +6,7 @@
     <h3>Список статей:</h3>
     {% for item in news %}
         <article>
-            <h4>{{ item.__id }} {{ item.title }}</h4>
+            <h4><a href="/admin/article/{{ item.__id }}">{{ item.__id }} {{ item.title }}</a></h4>
         </article>
     {% endfor %}
 

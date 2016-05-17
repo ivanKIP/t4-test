@@ -15,9 +15,30 @@ class Admin
         $this->data->news = Article::findAll();
     }
 
+    /**
+     * @param int $id
+     */
+    public function actionOne($id)
+    {
+        $this->data->article = Article::findByPK($id);
+    }
+
+    public function actionSave()
+    {
+
+    }
+
     public function actionAdd()
     {
 
     }
 
+    /**
+     * @param int $id
+     */
+    public function actionDelete($id)
+    {
+        Article::findByPK($id)->delete();
+        $this->redirect('/admin');
+    }
 }

@@ -1,0 +1,11 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+    {% if not article is empty %}
+        <article>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.text }}</p>
+            <p>Создано: {{ article.dateTime }}</p>
+        </article>
+    {% endif %}
+{% endblock %}
