@@ -1,0 +1,13 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+
+    <h1>Админ-панель</h1>
+    <h3>Список статей:</h3>
+    {% for item in news %}
+        <article>
+            <h4>{{ item.__id }} {{ item.title }}</h4>
+        </article>
+    {% endfor %}
+
+{% endblock %}

@@ -9,6 +9,7 @@ use T4\Mvc\Controller;
 class News
     extends Controller
 {
+
     public function actionDefault()
     {
         return $this->actionAll();
