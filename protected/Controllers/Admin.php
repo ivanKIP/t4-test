@@ -23,13 +23,30 @@ class Admin
         $this->data->article = Article::findByPK($id);
     }
 
-    public function actionSave()
+    public function actionSave($article)
     {
-
+        if (empty($article['__id'])) {
+            $newArticle = new Article();
+            $newArticle
+                ->fill($article)
+                ->save();
+        } else {
+            $editArticle = Article::findByPK($article['__id']);
+            $editArticle->title = $article['title'];
+            $editArticle->text = $article['text'];
+            $editArticle->save();
+        }
+        $this->redirect('/admin');
     }
 
     public function actionAdd()
     {
+
+    }
+
+    public function actionEdit($id)
+    {
+        $this->data->article = Article::findByPK($id);
 
     }
 
@@ -38,7 +55,10 @@ class Admin
      */
     public function actionDelete($id)
     {
-        Article::findByPK($id)->delete();
+        $article = Article::findByPK($id);
+        if (!empty($article)) {
+            $article->delete();
+        }
         $this->redirect('/admin');
     }
 }

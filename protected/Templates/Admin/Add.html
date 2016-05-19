@@ -1,0 +1,25 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+
+    <form action="/admin/save" class="container" method="post">
+        <div class="row">
+            <div class="col-xs-2">
+                Заголовок
+            </div>
+            <div class="col-xs-4">
+                <input type="text" size="40" name="article[title]">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                Текст
+            </div>
+            <div class="col-xs-4">
+                <textarea cols="40" rows="3" type="text" name="article[text]"></textarea>
+            </div>
+        </div>
+        <input type="submit" class="submit" value="Сохранить">
+    </form>
+
+{% endblock %}

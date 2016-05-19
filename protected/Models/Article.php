@@ -9,6 +9,9 @@ use T4\Orm\Model;
  * @package App\Models
  * Класс Article
  * Схема таблицы
+ * @property string $title
+ * @property string $text
+ * @property string $dateTime
  */
 class Article
     extends Model
@@ -16,7 +19,6 @@ class Article
 
     static protected $schema = [
         'columns' => [
-            '__id'      => ['type'  => 'pk'],
             'title'     => ['type'  => 'string'],
             'text'      => ['type'  => 'text'],
             'dateTime'  => ['type'  => 'datetime']

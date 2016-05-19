@@ -11,7 +11,6 @@ class m_1463420026_createArticles
     public function up()
     {
         $this->createTable('articles', [
-            '__id'      => ['type'  => 'pk'],
             'title'     => ['type'  => 'string'],
             'text'      => ['type'  => 'text'],
             'dateTime'  => ['type'  => 'datetime']

@@ -2,12 +2,25 @@
 
 {% block content %}
 
-    <h1>Админ-панель</h1>
     <h3>Список статей:</h3>
-    {% for item in news %}
-        <article>
-            <h4><a href="/admin/article/{{ item.__id }}">{{ item.__id }} {{ item.title }}</a></h4>
-        </article>
-    {% endfor %}
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Заголовок</th>
+            <th>Дата, время создания</th>
+            <th>Действие</th>
+        </tr>
+
+        {% for item in news %}
+            <tr>
+                <td><a href="/admin/article/{{ item.Pk }}">{{ item.Pk }}</a></td>
+                <td><a href="/admin/article/{{ item.Pk }}">{{ item.title }}</a></td>
+                <td>{{ item.dateTime }}</td>
+                <td><a href="/admin/delete?id={{ item.Pk }}" class="btn btn-warning">Удалить эту запись</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/add" class="btn btn-info">Добавить новость</a>
 
 {% endblock %}

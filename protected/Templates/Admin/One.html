@@ -1,6 +1,7 @@
 {% extends 'Admin.html' %}
 
 {% block content %}
+
     {% if not article is empty %}
         <article>
             <h3>{{ article.title }}</h3>
@@ -8,4 +9,7 @@
             <p>Создано: {{ article.dateTime }}</p>
         </article>
     {% endif %}
+
+    <a href="/admin/edit?id={{ article.Pk }}" class="btn btn-primary">Редактировать</a>
+
 {% endblock %}

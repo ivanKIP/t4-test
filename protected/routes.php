@@ -1,8 +1,7 @@
 <?php
 
 return [
-    '/pages/news' => '//news/all',
-    '/pages/article/<1>' => '//news/one(id=<1>)',
-    '/admin/article/<1>' => '//admin/one(id=<1>)'
-
+    '/pages/news' => '//News/All',
+    '/pages/article/<1>' => '//News/One(id=<1>)',
+    '/admin/article/<1>' => '//Admin/One(id=<1>)',
 ];
