@@ -9,6 +9,7 @@ namespace App\Models;
  */
 class Category
 {
+
     static protected $schema =[
         'table' => 'categories',
         'columns' => [
