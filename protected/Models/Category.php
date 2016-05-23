@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use T4\Orm\Model;
 
 /**
  * Class Category
@@ -8,6 +9,7 @@ namespace App\Models;
  * @property string $title
  */
 class Category
+    extends Model
 {
 
     static protected $schema =[
