@@ -1,0 +1,29 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+
+  <form action="/categories/save" class="container" method="post">
+    <div class="row">
+      <div class="col-xs-2">
+        Название
+      </div>
+      <div class="col-xs-4">
+        <input type="text" name="category[title]" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-2">
+        Родительский каталог
+      </div>
+      <div class="col-xs-4">
+        <select id="categories" name="category[parent]">
+          {% for item in tree %}
+            <option value="{{item.Pk}}">{{item.title}}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+    <input type="submit" class="submit" value="Сохранить">
+  </form>
+
+{% endblock %}

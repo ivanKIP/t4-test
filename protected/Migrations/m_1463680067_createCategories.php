@@ -11,9 +11,7 @@ class m_1463680067_createCategories
     public function up()
     {
         $this->createTable('categories', [
-            'columns' => [
-                'title' => ['type' => 'string']
-            ]
+            'title' => ['type' => 'string']
         ], [], ['tree']);
     }
 

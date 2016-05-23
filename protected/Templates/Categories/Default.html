@@ -1,0 +1,31 @@
+{% extends 'Admin.html' %}
+
+{% block content %}
+
+    <h3>Список категорий:</h3>
+    <table class="table table-striped">
+        <tr>
+            <th width="70%">Название категории</th>
+            <th colspan="3" class="text-center">Действия</th>
+        </tr>
+
+        {% for item in tree %}
+            <tr>
+                <td>
+                    {% if item.__lvl > 0 %}
+                        {% for i in 1..item.__lvl %}
+                            -
+                        {% endfor %}
+                    {% endif %}
+                    {{item.title}}
+                </td>
+                <td><a href="/categories/delete?id={{ item.Pk }}" class="btn btn-warning">Удалить</a></td>
+                <td><a href="/categories/up?id={{ item.Pk }}" class="btn btn-primary btn-sm">Вверх</a></td>
+                <td><a href="/categories/down?id={{ item.Pk }}" class="btn btn-primary btn-sm">Вниз</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/categories/add" class="btn btn-info">Добавить Категорию</a>
+
+{% endblock %}
