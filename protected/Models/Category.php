@@ -7,15 +7,19 @@ use T4\Orm\Model;
  * Class Category
  * @package App\Models
  * @property string $title
+ * @property \App\Models\Product $products
  */
 class Category
     extends Model
 {
 
-    static protected $schema =[
-        'table' => 'categories',
-        'columns' => [
+    static protected $schema = [
+        'table'     => 'categories',
+        'columns'   => [
             'title' => ['type' => 'string']
+        ],
+        'relations' => [
+            'products' => ['type' => self::HAS_MANY, 'model' => Product::class]
         ]
     ];
 
