@@ -65,8 +65,14 @@ class Categories
     public function actionProducts(int $id)
     {
         $category = Category::findByPK($id);
+        $products = [];
+        $products[] = $category->products;
+        $sub_categories = $category->findAllChildren();
+        foreach ($sub_categories as $cat) {
+            $products[] = $cat->products;
+        }
         $this->data->category = $category;
-        $this->data->products = Product::findAllByColumn('__category_id', $category->Pk);
+        $this->data->products = $products;
     }
 
 }

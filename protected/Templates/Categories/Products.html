@@ -8,11 +8,13 @@
       <th width="70%">Наименование:</th>
       <th>Цена:</th>
     </tr>
-    {% for item in products %}
-      <tr>
-        <td>{{ item.name }}</td>
-        <td>{{ item.price }}</td>
-      </tr>
+    {% for items in products %}
+      {% for item in items %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+        </tr>
+      {% endfor %}
     {% endfor %}
   </table>
 
