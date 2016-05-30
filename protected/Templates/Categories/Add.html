@@ -18,7 +18,7 @@
       <div class="col-xs-4">
         <select id="categories" name="category[parent]">
           {% for item in tree %}
-            <option value="{{item.Pk}}">{{item.title}}</option>
+            <option value="{{item.Pk}}">{% if item.__lvl > 0 %}{% for i in 1..item.__lvl %}-{% endfor %}{% endif %}{{item.title}}</option>
           {% endfor %}
         </select>
       </div>

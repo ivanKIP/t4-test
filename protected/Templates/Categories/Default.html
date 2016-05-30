@@ -8,14 +8,11 @@
             <th width="70%">Название категории</th>
             <th colspan="3" class="text-center">Действия</th>
         </tr>
-
         {% for item in tree %}
             <tr>
                 <td>
                     {% if item.__lvl > 0 %}
-                        {% for i in 1..item.__lvl %}
-                            -
-                        {% endfor %}
+                        {% for i in 1..item.__lvl %}-{% endfor %}
                     {% endif %}
                     {{item.title}}
                 </td>

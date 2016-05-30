@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Models\Category;
+use App\Models\Product;
 use T4\Mvc\Controller;
 
 class Categories
@@ -59,6 +60,13 @@ class Categories
             $item->insertAfter($sibling);
         }
         $this->redirect('/categories');
+    }
+
+    public function actionProducts(int $id)
+    {
+        $category = Category::findByPK($id);
+        $this->data->category = $category;
+        $this->data->products = Product::findAllByColumn('__category_id', $category->Pk);
     }
 
 }
